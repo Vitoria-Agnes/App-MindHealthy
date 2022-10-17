@@ -43,8 +43,7 @@ class ListFragment : Fragment(), TaskClickListener {
     }
 
     override fun onTaskClickListener(postagem: Postagem) {
-        mainViewModel.postagemSelecionada = postagem
+        mainViewModel.postagemSeleciona = postagem
         findNavController().navigate(R.id.action_listFragment_to_postFragment)
-
     }
 }

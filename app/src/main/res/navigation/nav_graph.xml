@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/loginFragment2">
 
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.app_mindhealthy.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_postFragment"
             app:destination="@id/postFragment" />
@@ -18,11 +18,27 @@
         android:id="@+id/postFragment"
         android:name="com.example.app_mindhealthy.PostFragment"
         android:label="fragment_post"
-        tools:layout="@layout/fragment_post" >
+        tools:layout="@layout/fragment_post">
         <action
             android:id="@+id/action_postFragment_to_listFragment"
-            app:destination="@id/listFragment"
-            app:popUpTo="@id/listFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.app_mindhealthy.LoginFragment"
+        android:label="fragment_login2"
+        tools:layout="@layout/fragment_login2" >
+        <action
+            android:id="@+id/action_loginFragment2_to_cadastroFragment2"
+            app:destination="@id/cadastroFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroFragment2"
+        android:name="com.example.app_mindhealthy.CadastroFragment"
+        android:label="fragment_cadastro2"
+        tools:layout="@layout/fragment_cadastro2" >
+        <action
+            android:id="@+id/action_cadastroFragment2_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
 </navigation>

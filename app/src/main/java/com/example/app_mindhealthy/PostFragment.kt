@@ -1,5 +1,6 @@
 package com.example.app_mindhealthy
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -102,15 +103,21 @@ class PostFragment : Fragment() {
             }
 
             Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_postFragment_to_listFragment)
+            //findNavController().navigate(R.id.action_postFragment_to_listFragment)
+//            if (findNavController().currentDestination == findNavController().findDestination(R.id.postFragment)){
+//
+//            }
+
+
         } else {
             Toast.makeText(context, "Verifique os Campos!", Toast.LENGTH_SHORT).show()
 
         }
     }
 
+
     private fun carregarDados(){
-      postagemSelecionada = mainViewModel.postagemSelecionada
+      postagemSelecionada = mainViewModel.postagemSeleciona
         if (postagemSelecionada != null){
             binding.editTextTitulo.setText(postagemSelecionada?.titulo)
             binding.editTextPost.setText(postagemSelecionada?.descricao)
@@ -120,4 +127,4 @@ class PostFragment : Fragment() {
 
     }
 
-    }
+}

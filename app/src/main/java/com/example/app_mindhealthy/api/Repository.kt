@@ -2,6 +2,7 @@ package com.example.app_mindhealthy.api
 
 import com.example.app_mindhealthy.model.Postagem
 import com.example.app_mindhealthy.model.Temas
+import com.example.app_mindhealthy.model.Usuario
 import retrofit2.Response
 
 class Repository {
@@ -23,6 +24,8 @@ class Repository {
        suspend fun deletePostagem(id: Long): Response<Postagem>{
            return RetrofitInstance.api.deletePostagem(id)
        }
-
+    suspend fun cadUsuario(usuario: Usuario): Response<Usuario> {
+        return RetrofitInstance.api.cadUsuario(usuario)
+    }
 
     }
